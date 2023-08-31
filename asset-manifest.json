@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/MiniMartWebsite/static/css/main.8bb10148.css",
+    "main.js": "/MiniMartWebsite/static/js/main.72bfaf30.js",
+    "static/js/787.c4e7f8f9.chunk.js": "/MiniMartWebsite/static/js/787.c4e7f8f9.chunk.js",
+    "index.html": "/MiniMartWebsite/index.html",
+    "main.8bb10148.css.map": "/MiniMartWebsite/static/css/main.8bb10148.css.map",
+    "main.72bfaf30.js.map": "/MiniMartWebsite/static/js/main.72bfaf30.js.map",
+    "787.c4e7f8f9.chunk.js.map": "/MiniMartWebsite/static/js/787.c4e7f8f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8bb10148.css",
+    "static/js/main.72bfaf30.js"
+  ]
+}
