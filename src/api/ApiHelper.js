@@ -1,11 +1,13 @@
-import data from '../config.json';
+import GetApiConfig from "./ApiConfig";
 
 export default function GetApiUrl(callback) {
-    switch(data.apiToUse.toLowerCase()){
+    var config = GetApiConfig();
+    console.log(config);
+    switch(config.apiToUse.toLowerCase()){
         case "local":
-            return data.localApiUrl;
+            return config.localApiUrl;
         case "deployed":
-            return data.deployedApiUrl;
+            return config.deployedApiUrl;
         default:
             return "Unknown";
     }
