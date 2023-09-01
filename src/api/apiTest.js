@@ -1,5 +1,8 @@
+import GetApiUrl from './ApiHelper';
+
 export default async function callAPI(callback) {
-    const res = await fetch("https://mini-mart-game-api-6b43b9b5a9f8.herokuapp.com/testAPI");
+    var url = GetApiUrl() + "/testAPI";
+    const res = await fetch(url);
     const restext = await res.text()
     callback(restext);
 }
