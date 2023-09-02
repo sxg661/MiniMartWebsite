@@ -3,7 +3,7 @@ import MainPage from './react/pages/MainPage';
 import SinglePostPage from './react/pages/SinglePostPage';
 import PostContext from './contexts/PostContext';
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter , Route, Routes } from 'react-router-dom';
 
 function App() {
 
@@ -16,13 +16,12 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
+      <HashRouter >
         <Routes>
-          <Route path="/" element={<MainPage/>} />
-          <Route path="/post" element={PostComponent()} />
-
+          <Route exact path="/" element={<MainPage/>} />
+          <Route exact path="/post" element={PostComponent()} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
