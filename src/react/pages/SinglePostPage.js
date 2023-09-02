@@ -1,12 +1,11 @@
-import { useContext } from "react";
-import PostContext from "../../contexts/PostContext";
+import { useSearchParams } from "react-router-dom";
 
 function SinglePostPage() {
-    const postContext = useContext(PostContext)
+    const [searchParams] = useSearchParams();
 
     return (
         <div className="test">
-            A Post with id {postContext.id}
+            A Post with id {searchParams.get('id')}
         </div>
     );
     }
