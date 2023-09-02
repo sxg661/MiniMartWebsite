@@ -1,1 +1,37 @@
-@import "_Example";
+.FullWidth {
+  width: 100%;
+}
+
+.FullHeight {
+  height: 100%;
+}
+
+.LeftAlignContents {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+}
+
+.CenterContents {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ColumnFlex {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+
+.FlexGrow {
+  flex-grow: 1;
+}
+
+div {
+  background-color: red;
+}
+
+/*# sourceMappingURL=App.css.map */
