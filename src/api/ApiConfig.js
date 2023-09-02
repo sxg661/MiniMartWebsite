@@ -4,6 +4,6 @@ const config = {
     "deployedApiUrl" : "https://mini-mart-game-api-6b43b9b5a9f8.herokuapp.com"
 }
 
-export default function ApiConfig() {
+export default function GetApiConfig() {
     return config;
 }

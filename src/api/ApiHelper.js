@@ -8,6 +8,6 @@ export default function GetApiUrl(callback) {
         case "deployed":
             return config.deployedApiUrl;
         default:
-            return "Unknown";
+            throw new Error(`No url found for ${config.apiToUse}. Check your ApiConfig.js file.`);
     }
 }
