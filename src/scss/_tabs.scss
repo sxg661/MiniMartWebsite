@@ -1,0 +1,56 @@
+.tab {
+	padding: 10px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+
+    &-container {
+        display: flex;
+    }
+
+    &-text {
+        margin: 0;
+        color: var(--colour-white);
+        text-decoration: underline;
+
+        &:hover {
+            color: var(--colour-dark-grey);
+        }
+    }
+
+    &-selected {
+        background-color: var(--colour-white);
+
+        .tab-text {
+            color: var(--colour-dark-grey);
+            text-decoration: none;
+            cursor: default;
+
+            &:hover {
+                color: var(--colour-light-light-blue);
+            }
+        }
+    }
+}
+
+/*Desktop only*/
+@media only screen and (min-width: 889px) {
+    .tab {
+        &-text {
+            font-size: 20px;
+        }
+    }
+}
+
+/*Mobile only*/
+@media only screen and (max-width: 889px) {
+    .tab {
+        &-text {
+            font-size: 17px;
+        }
+
+        &-container {
+            justify-content: center;
+        }
+    }
+}

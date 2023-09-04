@@ -8,15 +8,26 @@ import ErrorPage from './react/pages/ErrorPage';
 function App() {
 
   return (
-    <div className="App">
-      <HashRouter >
-        <Routes>
-          <Route exact path="/" element={<MainPage/>} />
-          <Route exact path="/post" element={<SinglePostPage/>} />
-          <Route exact path="/*" element={<ErrorPage/>} />
-        </Routes>
-      </HashRouter>
+    <div className="page-container">
+	    <div className="main-container">
+
+		    <div className="title-container">
+			    <h1 className="title">Mini Mart</h1>
+		    </div>
+
+        <div className="content">
+          <HashRouter >
+            <Routes>
+              <Route exact path="/" element={<MainPage/>} />
+              <Route exact path="/post" element={<SinglePostPage/>} />
+              <Route exact path="/*" element={<ErrorPage/>} />
+            </Routes>
+          </HashRouter>
+		    </div>
+
+      </div>
     </div>
+    
   );
 }
 
