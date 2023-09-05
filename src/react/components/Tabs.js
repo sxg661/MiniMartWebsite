@@ -2,7 +2,7 @@ import { useState } from "react";
 import { format } from "react-string-format";
 import Tab from "./Tab";
 
-function Tabs() {
+function Tabs(props) {
     const originalTabs = [
         {key : "1", id : 1, tabName : "Home", selected : true},
         {key : "2", id : 2, tabName : "Dev Log", selected : false},
@@ -17,6 +17,7 @@ function Tabs() {
             tab => ({key: format("{0}_{1}",tab.key, time), id : tab.id, tabName : tab.tabName, selected : tab.id === id})
         );
         setTabs(newTabs);
+        props.firstTabSelectedCallback(newTabs.length > 0 && newTabs[0].selected);
     }
 
     const renderTabs = (tabsToRender) => tabsToRender.map(
@@ -27,6 +28,7 @@ function Tabs() {
             id = {tab.id}
             callBack = {callBack}/>
     )
+
     return (
         <div className="tab-container">
             {renderTabs(tabs)}

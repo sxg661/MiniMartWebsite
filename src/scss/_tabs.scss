@@ -11,28 +11,32 @@
         display: flex;
     }
 
+    &:hover {
+        .tab-text {
+            color: var(--colour-dark-grey);
+        }
+    }
+
     &-text {
         margin: 0;
         color: var(--colour-white);
         text-decoration: underline;
         font-weight: bold;
-
-        &:hover {
-            color: var(--colour-dark-grey);
-        }
     }
 
     &-selected {
         background-color: var(--colour-white);
 
+        &:hover {
+            .tab-text {
+                color: var(--colour-light-light-blue);
+            }
+        }
+
         .tab-text {
             color: var(--colour-dark-grey);
             text-decoration: none;
             cursor: default;
-
-            &:hover {
-                color: var(--colour-light-light-blue);
-            }
         }
     }
 }

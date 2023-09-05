@@ -9,8 +9,8 @@ function Tab(props) {
     }
 
     return(
-        <button id = {format("tab_{0}", props.id)} className={format('tab {0}', selectedClass)}>
-            <h3 className="tab-text" onClick={handleClick}>{props.text}</h3>
+        <button id = {format("tab_{0}", props.id)} className={format('tab {0}', selectedClass)} onClick={handleClick}>
+            <h3 className="tab-text">{props.text}</h3>
         </button>
     )
 }

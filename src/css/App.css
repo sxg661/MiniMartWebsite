@@ -14,6 +14,14 @@
   background-color: var(--colour-white);
 }
 
+@media only screen and (min-width: 889px) {
+  .main-page-content {
+    border-radius: 5px;
+  }
+  .main-page-content-first-tab-selected {
+    border-radius: 0 5px 5px 5px;
+  }
+}
 .tab {
   padding: 10px;
   cursor: pointer;
@@ -26,25 +34,25 @@
 .tab-container {
   display: flex;
 }
+.tab:hover .tab-text {
+  color: var(--colour-dark-grey);
+}
 .tab-text {
   margin: 0;
   color: var(--colour-white);
   text-decoration: underline;
   font-weight: bold;
 }
-.tab-text:hover {
-  color: var(--colour-dark-grey);
-}
 .tab-selected {
   background-color: var(--colour-white);
+}
+.tab-selected:hover .tab-text {
+  color: var(--colour-light-light-blue);
 }
 .tab-selected .tab-text {
   color: var(--colour-dark-grey);
   text-decoration: none;
   cursor: default;
-}
-.tab-selected .tab-text:hover {
-  color: var(--colour-light-light-blue);
 }
 
 /*Desktop only*/
