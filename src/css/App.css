@@ -19,6 +19,9 @@
   cursor: pointer;
   display: flex;
   align-items: center;
+  border-radius: 5px 5px 0 0;
+  background-color: transparent;
+  border: none;
 }
 .tab-container {
   display: flex;
@@ -27,6 +30,7 @@
   margin: 0;
   color: var(--colour-white);
   text-decoration: underline;
+  font-weight: bold;
 }
 .tab-text:hover {
   color: var(--colour-dark-grey);

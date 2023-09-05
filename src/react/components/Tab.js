@@ -2,12 +2,16 @@ import { format } from 'react-string-format';
 import { useState } from 'react';
 
 function Tab(props) {
-    const [selectedClass, setSelectedClass] = useState(props.selected ? "tab-selected" : "tab");
+    const [selectedClass] = useState(props.selected ? "tab-selected" : "tab");
+
+    const handleClick = () => {
+        props.callBack(props.id);
+    }
 
     return(
-        <div className={format('tab {0}', selectedClass)}>
-            <h3 className="tab-text">{props.text}</h3>
-        </div>
+        <button id = {format("tab_{0}", props.id)} className={format('tab {0}', selectedClass)}>
+            <h3 className="tab-text" onClick={handleClick}>{props.text}</h3>
+        </button>
     )
 }
 
