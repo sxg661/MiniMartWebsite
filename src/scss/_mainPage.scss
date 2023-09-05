@@ -1,16 +1,16 @@
 .main-page {
     width: 100%;
     height: 100%;
-    display: grid;
-    grid-template-rows: 40px 1fr;
-    gap: 0;
+    display: flex;
+    flex-direction: column;
     
     .tab-container {
         grid-row: 1;
+        flex-basis: 40px;
     }
 
     &-content {
-        grid-row: 2;
+        flex-grow: 1;
         background-color: var(--colour-white);
     }
 }
