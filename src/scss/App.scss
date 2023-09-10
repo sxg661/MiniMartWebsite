@@ -2,8 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Catamaran&display=swap');
 
 @import "mainPage";
+@import "singlePostPage";
 @import "tabs";
 @import "title";
+@import "post";
 
 body {
 	--colour-blue: #63b6ff;
@@ -11,6 +13,8 @@ body {
 	--colour-light-blue: #71b8f5;
 	--colour-dark-bule: #1072c7;
 	--colour-dark-grey: #242424;
+	--colour-grey: #666666;
+	--colour-light-grey: #aaaaaa;
     --colour-white: white;
 }
 
@@ -22,7 +26,7 @@ body, html, #root {
 
 .page-container {
 	width: 100%;
-	height: 100%;
+	min-height: 100%;
 	display: flex;
 	font-family: 'Catamaran', sans-serif;
 }

@@ -1,0 +1,22 @@
+.post {
+	color: var(--colour-dark-grey);
+
+    p, h3 {
+        margin: 0;
+        padding: 0;
+    }
+
+    &-container {
+        padding: 15px;
+    }
+
+    &-date {
+        font-size: 15px;
+        color: var(--colour-grey);
+    }
+
+    &-title {
+        font-size: 16px;
+        padding-bottom: 5px;
+    }
+}
