@@ -1,13 +1,10 @@
 .post {
 	color: var(--colour-dark-grey);
+    padding: 15px;
 
     p, h3 {
         margin: 0;
         padding: 0;
-    }
-
-    &-container {
-        padding: 15px;
     }
 
     &-date {
@@ -19,4 +16,41 @@
         font-size: 16px;
         padding-bottom: 5px;
     }
+
+    &-image-container {
+        a, img {
+            width: 100%;
+        }
+    }
+
+    &-video-container {
+        iframe {
+            width: 100%;
+            border-radius: 5px;
+        }
+    }
+
+    /*Desktop only*/
+    @media only screen and (min-width: 889px) {
+        &-image-container {
+            max-width: 500px;
+            max-height: 500px;
+        }
+
+        &-video-container {
+            width: 600px;
+        }
+    }
+    
+    /*Mobile only*/
+    @media only screen and (max-width: 888px) {
+        &-image-container {
+            width: 100%;
+        }
+
+        &-video-container {
+            width: 100%;
+        }
+    }
+
 }

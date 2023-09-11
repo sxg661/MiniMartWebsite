@@ -87,6 +87,7 @@
   color: var(--colour-white);
 }
 .title-container {
+  margin-top: 10px;
   grid-row: 1;
   display: flex;
   align-items: center;
@@ -111,13 +112,13 @@
 }
 .post {
   color: var(--colour-dark-grey);
+  padding: 15px;
+  /*Desktop only*/
+  /*Mobile only*/
 }
 .post p, .post h3 {
   margin: 0;
   padding: 0;
-}
-.post-container {
-  padding: 15px;
 }
 .post-date {
   font-size: 15px;
@@ -126,6 +127,30 @@
 .post-title {
   font-size: 16px;
   padding-bottom: 5px;
+}
+.post-image-container a, .post-image-container img {
+  width: 100%;
+}
+.post-video-container iframe {
+  width: 100%;
+  border-radius: 5px;
+}
+@media only screen and (min-width: 889px) {
+  .post-image-container {
+    max-width: 500px;
+    max-height: 500px;
+  }
+  .post-video-container {
+    width: 600px;
+  }
+}
+@media only screen and (max-width: 888px) {
+  .post-image-container {
+    width: 100%;
+  }
+  .post-video-container {
+    width: 100%;
+  }
 }
 
 body {
@@ -166,7 +191,7 @@ button {
 /*Desktop only*/
 @media only screen and (min-width: 889px) {
   .main-container {
-    margin: 50px;
+    margin: 15px;
     grid-template-rows: 100px 1fr;
     padding: 0 20px 20px 20px;
     border-radius: 5px;
