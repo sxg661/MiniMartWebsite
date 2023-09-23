@@ -6,7 +6,7 @@ export default async function GetPostInDateRange(startDate, endDate, callback) {
     const endTimeStamp = Timestamp.fromDate(endDate);
 
     const collectionRef = collection(firestoreDb, "posts");
-    let queryRef = query(collectionRef, where('time', ".=", startTimeStamp)); 
+    let queryRef = query(collectionRef, where('time', ">=", startTimeStamp)); 
     queryRef = query(collectionRef, where('time', "<", endTimeStamp));
 
     const result = await getDocs(queryRef);
