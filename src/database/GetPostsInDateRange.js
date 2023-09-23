@@ -1,5 +1,5 @@
 import firestoreDb from "./firebase";
-import { Timestamp, collection, query, where, getDocs} from "firebase/firestore";
+import { Timestamp, collection, query, where, orderBy, getDocs} from "firebase/firestore";
 
 export default async function GetPostInDateRange(startDate, endDate, callback) {
     const startTimeStamp = Timestamp.fromDate(startDate);
@@ -7,7 +7,10 @@ export default async function GetPostInDateRange(startDate, endDate, callback) {
 
     const collectionRef = collection(firestoreDb, "posts");
     let queryRef = query(collectionRef, where('time', ">=", startTimeStamp)); 
-    queryRef = query(collectionRef, where('time', "<", endTimeStamp));
+    queryRef = query(queryRef, where('time', "<", endTimeStamp));
+    queryRef = query(queryRef, orderBy('time'));
+
+    console.log(queryRef);
 
     const result = await getDocs(queryRef);
 
