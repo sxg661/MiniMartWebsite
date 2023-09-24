@@ -15,7 +15,7 @@ function SinglePostPage() {
 
     const renderPost = () => {
         if (postData) {
-            return <Post postData={postData}/>
+            return <Post postData={postData} IsSinglePost={true}/>
         }
     }
 

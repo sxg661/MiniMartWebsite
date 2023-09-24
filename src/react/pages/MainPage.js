@@ -3,12 +3,6 @@ import { format } from "react-string-format";
 import Tabs from "../components/Tabs";
 import AllPosts from "../components/AllPosts";
 
-function addWeeks(date, weeks) {
-  const dateCopy = new Date(date);
-  dateCopy.setDate(dateCopy.getDate() + 7 * weeks);
-  return dateCopy;
-}
-
 function MainPage() {
     const [firstTabSelected, setFirstTabSelected] = useState(true);
 

@@ -11,7 +11,7 @@ body {
 	--colour-blue: #63b6ff;
 	--colour-light-light-blue: #b3dbfc;
 	--colour-light-blue: #71b8f5;
-	--colour-dark-bule: #1072c7;
+	--colour-dark-blue: #1072c7;
 	--colour-dark-grey: #242424;
 	--colour-grey: #666666;
 	--colour-light-grey: #aaaaaa;
@@ -29,6 +29,8 @@ body, html, #root {
 	min-height: 100%;
 	display: flex;
 	font-family: 'Catamaran', sans-serif;
+	display: flex;
+	justify-content: center;
 }
 
 button {
@@ -39,6 +41,7 @@ button {
 .main-container {
 	flex-grow: 1;
 	background-color: var(--colour-light-blue);
+	max-width: 1000px;
 	
 	display: grid;
 }
@@ -48,7 +51,7 @@ button {
 	.main-container {
 		margin: 15px;
 		grid-template-rows: 100px 1fr;
-        padding: 0 20px 20px 20px;
+        padding: 0 30px 30px 30px;
         border-radius: 5px;
 	}
 }

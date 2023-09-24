@@ -10,8 +10,6 @@ export default async function GetPostInDateRange(startDate, endDate, callback) {
     queryRef = query(queryRef, where('time', "<", endTimeStamp));
     queryRef = query(queryRef, orderBy('time'));
 
-    console.log(queryRef);
-
     const result = await getDocs(queryRef);
 
     const resultDocs = [];
@@ -20,5 +18,5 @@ export default async function GetPostInDateRange(startDate, endDate, callback) {
         resultDocs.push(doc.data());
     });
 
-    callback(resultDocs);
+    callback(startDate, endDate, resultDocs);
 };

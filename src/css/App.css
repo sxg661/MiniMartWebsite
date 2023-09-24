@@ -120,13 +120,19 @@
   margin: 0;
   padding: 0;
 }
+.post-container {
+  display: flex;
+  flex-direction: column;
+}
 .post-date {
   font-size: 15px;
   color: var(--colour-grey);
 }
 .post-title {
   font-size: 16px;
-  padding-bottom: 5px;
+  margin-bottom: 20px;
+  color: var(--colour-);
+  border-bottom: 1.5px solid var(--colour-light-grey);
 }
 .post-image-container a, .post-image-container img {
   width: 100%;
@@ -137,11 +143,14 @@
 }
 @media only screen and (min-width: 889px) {
   .post-image-container {
-    max-width: 500px;
-    max-height: 500px;
+    max-width: 600px;
+    max-height: 600px;
   }
   .post-video-container {
-    width: 600px;
+    max-width: 600px;
+  }
+  .post-title {
+    width: 400px;
   }
 }
 @media only screen and (max-width: 888px) {
@@ -157,7 +166,7 @@ body {
   --colour-blue: #63b6ff;
   --colour-light-light-blue: #b3dbfc;
   --colour-light-blue: #71b8f5;
-  --colour-dark-bule: #1072c7;
+  --colour-dark-blue: #1072c7;
   --colour-dark-grey: #242424;
   --colour-grey: #666666;
   --colour-light-grey: #aaaaaa;
@@ -175,6 +184,8 @@ body, html, #root {
   min-height: 100%;
   display: flex;
   font-family: "Catamaran", sans-serif;
+  display: flex;
+  justify-content: center;
 }
 
 button {
@@ -185,6 +196,7 @@ button {
 .main-container {
   flex-grow: 1;
   background-color: var(--colour-light-blue);
+  max-width: 1000px;
   display: grid;
 }
 
@@ -193,7 +205,7 @@ button {
   .main-container {
     margin: 15px;
     grid-template-rows: 100px 1fr;
-    padding: 0 20px 20px 20px;
+    padding: 0 30px 30px 30px;
     border-radius: 5px;
   }
 }

@@ -7,6 +7,11 @@
         padding: 0;
     }
 
+    &-container {
+        display: flex;
+        flex-direction: column;
+    }
+
     &-date {
         font-size: 15px;
         color: var(--colour-grey);
@@ -14,7 +19,10 @@
 
     &-title {
         font-size: 16px;
-        padding-bottom: 5px;
+        margin-bottom: 20px;
+        color: var(--colour-);
+
+        border-bottom: 1.5px solid var(--colour-light-grey);
     }
 
     &-image-container {
@@ -33,12 +41,16 @@
     /*Desktop only*/
     @media only screen and (min-width: 889px) {
         &-image-container {
-            max-width: 500px;
-            max-height: 500px;
+            max-width: 600px;
+            max-height: 600px;
         }
 
         &-video-container {
-            width: 600px;
+            max-width: 600px;
+        }
+
+        &-title {
+            width: 400px;
         }
     }
     
@@ -52,5 +64,4 @@
             width: 100%;
         }
     }
-
 }
