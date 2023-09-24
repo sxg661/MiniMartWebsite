@@ -54,10 +54,10 @@ export default function AllPosts(props) {
 
     function LoadInitialPosts(){
         //currently the page tries to load twice, not sure why :( just only let it on second time
-        if(initialLoad){
-            initialLoad = false;
-            return;
-        }
+       // if(initialLoad){
+            //initialLoad = false;
+            //return;
+        //}
 
         setPostsToShow([])
         postsToShowBuffer = [];
