@@ -8,6 +8,13 @@ function addDays(date, numberOfDays) {
     return dateCopy;
 }
 
+function getTomorrowMidnight(){
+    const todayDate = new Date();
+    todayDate.setHours(0,0,0);
+
+    return addDays(todayDate, 1);
+}
+
 export default function AllPosts(props) {
     let initialLoad = true;
 
@@ -22,7 +29,7 @@ export default function AllPosts(props) {
     const [postsToShow, setPostsToShow] = useState([])
     let postsToShowBuffer = [];
 
-    function PostLoadCallback(startDate, postDatas, lookForwards) {
+    function PostLoadCallback(startDate, endDate, postDatas, lookForwards) {
         const amountNeeded = postsPerPage - postsToShowBuffer.length;
 
         const additonalPostsToShow = lookForwards ? 
@@ -35,37 +42,49 @@ export default function AllPosts(props) {
             additonalPostsToShow.concat(postsToShowBuffer) :
             postsToShowBuffer.concat(additonalPostsToShowMostRecentFirst);
 
-        const isFirstPost = postsToShowBuffer.length && postsToShowBuffer[postsToShowBuffer.length - 1].isFirstPost
+        const firstPostReached = postsToShowBuffer.length && postsToShowBuffer[postsToShowBuffer.length - 1].isFirstPost;
+        const searchRangeOverlapsWithFuture = endDate > new Date();
 
-        if(!isFirstPost && postsToShowBuffer.length < postsPerPage){
-            const newStartDate = addDays(startDate, -7);
-            const newEndDate = startDate;
+        const noMorePostsToSearch = lookForwards ? searchRangeOverlapsWithFuture : firstPostReached;
 
-            GetPostInDateRange(newStartDate , newEndDate, (startDate, _, postDatas) => PostLoadCallback(startDate, postDatas, lookForwards));
+        if(!noMorePostsToSearch && postsToShowBuffer.length < postsPerPage){
+            const newStartDate = lookForwards ? endDate : addDays(startDate, -timeIntervalToSearchInDays-7);
+            const newEndDate = lookForwards ? addDays(endDate, timeIntervalToSearchInDays) : startDate;
+
+            GetPostInDateRange(newStartDate, newEndDate, (startDate, endDate, postDatas) => PostLoadCallback(startDate, endDate, postDatas, lookForwards));
         }
         else {
-            if(postsToShowBuffer.length){
+            if(postsToShowBuffer.length) {
                 latestDateShown = postsToShowBuffer[0].time.toDate();
                 earliestDateShown = postsToShowBuffer[postsToShowBuffer.length - 1].time.toDate();
             }
             postsToShowBuffer.forEach((post) => {
                 post.key = `${nextKey++}`;
-            })
-            setPostsToShow(postsToShowBuffer);
+            });
+            DisplayPostsInBuffer(postsToShowBuffer);
         }
     }
 
+    function DisplayPostsInBuffer(){
+        if(postsToShowBuffer.length) {
+            latestDateShown = postsToShowBuffer[0].time.toDate();
+            earliestDateShown = postsToShowBuffer[postsToShowBuffer.length - 1].time.toDate();
+        }
+        postsToShowBuffer.forEach((post) => {
+            post.key = `${nextKey++}`;
+        });
+        setPostsToShow(postsToShowBuffer);
+        postsToShowBuffer = [];
+    }
+
     function LoadInitialPosts(){
-        setPostsToShow([])
+        setPostsToShow([]);
         postsToShowBuffer = [];
         
-        const todayDate = new Date();
-        todayDate.setHours(0,0,0);
-
-        const endDate = addDays(todayDate, 1);
+        const endDate = getTomorrowMidnight();
         const startDate = addDays(endDate, -timeIntervalToSearchInDays);
 
-        GetPostInDateRange(startDate , endDate, (startDate, _, postDatas) => PostLoadCallback(startDate, postDatas, false));
+        GetPostInDateRange(startDate , endDate, (startDate, endDate, postDatas) => PostLoadCallback(startDate, endDate, postDatas, false));
     }
     useEffect(() => LoadInitialPosts(), [])
 
