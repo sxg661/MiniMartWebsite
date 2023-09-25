@@ -27,9 +27,8 @@ export default function AllPosts(props) {
     let earliestDateShown = null;
 
     const [postsToShow, setPostsToShow] = useState([])
-    let postsToShowBuffer = [];
 
-    function PostLoadCallback(startDate, endDate, postDatas, lookForwards) {
+    function PostLoadCallback(postsToShowBuffer, startDate, endDate, postDatas, lookForwards) {
         const amountNeeded = postsPerPage - postsToShowBuffer.length;
 
         const additonalPostsToShow = lookForwards ? 
@@ -51,7 +50,8 @@ export default function AllPosts(props) {
             const newStartDate = lookForwards ? endDate : addDays(startDate, -timeIntervalToSearchInDays-7);
             const newEndDate = lookForwards ? addDays(endDate, timeIntervalToSearchInDays) : startDate;
 
-            GetPostInDateRange(newStartDate, newEndDate, (startDate, endDate, postDatas) => PostLoadCallback(startDate, endDate, postDatas, lookForwards));
+            GetPostInDateRange(newStartDate, newEndDate, (startDate, endDate, postDatas) =>
+                PostLoadCallback(postsToShowBuffer, startDate, endDate, postDatas, lookForwards));
         }
         else {
             if(postsToShowBuffer.length) {
@@ -65,7 +65,7 @@ export default function AllPosts(props) {
         }
     }
 
-    function DisplayPostsInBuffer(){
+    function DisplayPostsInBuffer(postsToShowBuffer){
         if(postsToShowBuffer.length) {
             latestDateShown = postsToShowBuffer[0].time.toDate();
             earliestDateShown = postsToShowBuffer[postsToShowBuffer.length - 1].time.toDate();
@@ -78,13 +78,10 @@ export default function AllPosts(props) {
     }
 
     function LoadInitialPosts(){
-        setPostsToShow([]);
-        postsToShowBuffer = [];
-        
-        const endDate = getTomorrowMidnight();
+        const endDate = addDays(getTomorrowMidnight(), -50);
         const startDate = addDays(endDate, -timeIntervalToSearchInDays);
 
-        GetPostInDateRange(startDate , endDate, (startDate, endDate, postDatas) => PostLoadCallback(startDate, endDate, postDatas, false));
+        GetPostInDateRange(startDate , endDate, (startDate, endDate, postDatas) => PostLoadCallback([], startDate, endDate, postDatas, true));
     }
     useEffect(() => LoadInitialPosts(), [])
 
