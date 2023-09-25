@@ -22,15 +22,18 @@ export default function AllPosts(props) {
     const [postsToShow, setPostsToShow] = useState([])
     let postsToShowBuffer = [];
 
-    function PostLoadCallback(startDate, postDatas) {
+    function PostLoadCallback(startDate, postDatas, lookForwards) {
         const amountNeeded = postsPerPage - postsToShowBuffer.length;
 
-        let additonalPostsToShow = null;
-        additonalPostsToShow = postDatas.slice(Math.max(postDatas.length - amountNeeded, 0))
+        const additonalPostsToShow = lookForwards ? 
+            postDatas.slice(0, amountNeeded) :
+            postDatas.slice(Math.max(postDatas.length - amountNeeded, 0));
 
         const additonalPostsToShowMostRecentFirst = additonalPostsToShow.reverse();
 
-        postsToShowBuffer = postsToShowBuffer.concat(additonalPostsToShowMostRecentFirst);
+        postsToShowBuffer = lookForwards ? 
+            additonalPostsToShow.concat(postsToShowBuffer) :
+            postsToShowBuffer.concat(additonalPostsToShowMostRecentFirst);
 
         const isFirstPost = postsToShowBuffer.length && postsToShowBuffer[postsToShowBuffer.length - 1].isFirstPost
 
@@ -38,7 +41,7 @@ export default function AllPosts(props) {
             const newStartDate = addDays(startDate, -7);
             const newEndDate = startDate;
 
-            GetPostInDateRange(newStartDate , newEndDate, (startDate, _, postDatas) => PostLoadCallback(startDate, postDatas));
+            GetPostInDateRange(newStartDate , newEndDate, (startDate, _, postDatas) => PostLoadCallback(startDate, postDatas, lookForwards));
         }
         else {
             if(postsToShowBuffer.length){
@@ -53,12 +56,6 @@ export default function AllPosts(props) {
     }
 
     function LoadInitialPosts(){
-        //currently the page tries to load twice, not sure why :( just only let it on second time
-       // if(initialLoad){
-            //initialLoad = false;
-            //return;
-        //}
-
         setPostsToShow([])
         postsToShowBuffer = [];
         
@@ -68,7 +65,7 @@ export default function AllPosts(props) {
         const endDate = addDays(todayDate, 1);
         const startDate = addDays(endDate, -timeIntervalToSearchInDays);
 
-        GetPostInDateRange(startDate , endDate, (startDate, _, postDatas) => PostLoadCallback(startDate, postDatas));
+        GetPostInDateRange(startDate , endDate, (startDate, _, postDatas) => PostLoadCallback(startDate, postDatas, false));
     }
     useEffect(() => LoadInitialPosts(), [])
 
