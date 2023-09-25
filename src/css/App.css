@@ -162,12 +162,46 @@
   }
 }
 
+.el-buttons-container {
+  display: grid;
+  grid-template-columns: 100px 1fr 100px;
+  padding: 10px 0;
+}
+.el-buttons-button {
+  background-color: var(--colour-white);
+  border: none;
+  color: var(--colour-light-dark-grey);
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: underline;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+.el-buttons-disabled {
+  cursor: default;
+  color: var(--colour-light-grey);
+}
+.el-buttons-button:hover {
+  color: var(--colour-dark-blue);
+}
+.el-buttons-disabled:hover {
+  color: var(--colour-light-grey);
+}
+.el-buttons-later {
+  grid-column: 1;
+}
+.el-buttons-earlier {
+  grid-column: 3;
+}
+
 body {
   --colour-blue: #63b6ff;
   --colour-light-light-blue: #b3dbfc;
   --colour-light-blue: #71b8f5;
   --colour-dark-blue: #1072c7;
   --colour-dark-grey: #242424;
+  --colour-light-dark-grey: #353535;
   --colour-grey: #666666;
   --colour-light-grey: #aaaaaa;
   --colour-white: white;

@@ -1,0 +1,40 @@
+.el-buttons {
+    &-container {
+        display: grid;
+        grid-template-columns: 100px 1fr 100px;
+        padding: 10px 0;
+    }
+
+    &-button {
+        background-color: var(--colour-white);
+        border: none;
+        color: var(--colour-light-dark-grey);
+        font-size: 15px;
+        font-weight: bold;
+        text-decoration: underline;
+        padding: 0;
+        margin: 0;
+        cursor: pointer;
+    }
+
+    &-disabled {
+        cursor: default;
+        color: var(--colour-light-grey);
+    }
+
+    &-button:hover {
+        color: var(--colour-dark-blue);
+    }
+
+    &-disabled:hover {
+        color: var(--colour-light-grey);
+    }
+
+    &-later {
+        grid-column: 1;
+    }
+
+    &-earlier {
+        grid-column: 3;
+    }
+}

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import GetPostInDateRange from "../../database/GetPostsInDateRange";
+import GetMostRecentPostDate from "../../database/GetMostRecentPost";
 import Post from "./Post";
 
 function addDays(date, numberOfDays) {
@@ -78,6 +79,7 @@ export default function AllPosts(props) {
     }
 
     function LoadInitialPosts(){
+        GetMostRecentPostDate(console.log);
         const endDate = addDays(getTomorrowMidnight(), -50);
         const startDate = addDays(endDate, -timeIntervalToSearchInDays);
 
