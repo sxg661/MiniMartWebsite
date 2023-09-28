@@ -22,12 +22,12 @@ export default function EarlierLaterButtons(props) {
            <button 
            className={format("el-buttons-button el-buttons-later {0}", enableLaterButtonClass)}
            onClick = {HandleLaterButtonClick}>
-                Show Later
+                Show Newer
             </button>
             <button 
             className={format("el-buttons-button el-buttons-earlier {0}", enableEarlierButtonClass)}
             onClick = {HandleEarlierLButtonClick}>
-                Show Earlier
+                Show Older
             </button> 
         </div>
     )

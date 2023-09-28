@@ -23,6 +23,12 @@
     border-radius: 0 5px 5px 5px;
   }
 }
+/*Mobile only*/
+@media only screen and (max-width: 888px) {
+  .main-page-content {
+    padding-bottom: 50px;
+  }
+}
 .single-post {
   height: 100%;
   background-color: var(--colour-white);
@@ -164,7 +170,7 @@
 
 .el-buttons-container {
   display: grid;
-  grid-template-columns: 100px 1fr 100px;
+  grid-template-columns: 150px 1fr 150px;
   padding: 10px 0;
 }
 .el-buttons-button {
@@ -174,7 +180,7 @@
   font-size: 15px;
   font-weight: bold;
   text-decoration: underline;
-  padding: 0;
+  padding: 0 15px;
   margin: 0;
   cursor: pointer;
 }
@@ -190,9 +196,11 @@
 }
 .el-buttons-later {
   grid-column: 1;
+  text-align: left;
 }
 .el-buttons-earlier {
   grid-column: 3;
+  text-align: right;
 }
 
 body {
