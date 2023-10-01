@@ -2,7 +2,6 @@
     &-container {
         display: grid;
         grid-template-columns: 150px 1fr 150px;
-        padding: 10px 0;
     }
 
     &-button {
@@ -12,8 +11,8 @@
         font-size: 15px;
         font-weight: bold;
         text-decoration: underline;
-        padding: 0 15px;
         margin: 0;
+        padding: 0;
         cursor: pointer;
     }
 

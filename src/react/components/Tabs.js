@@ -17,7 +17,7 @@ function Tabs(props) {
             tab => ({key: format("{0}_{1}",tab.key, time), id : tab.id, tabName : tab.tabName, selected : tab.id === id})
         );
         setTabs(newTabs);
-        props.firstTabSelectedCallback(newTabs.length > 0 && newTabs[0].selected);
+        props.tabSelectedCallback(id);
     }
 
     const renderTabs = (tabsToRender) => tabsToRender.map(

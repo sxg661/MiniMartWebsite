@@ -1,18 +1,28 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { format } from "react-string-format";
 import Tabs from "../components/Tabs";
 import AllPosts from "../components/AllPosts";
 
 function MainPage() {
     const [firstTabSelected, setFirstTabSelected] = useState(true);
+    const [tabIndexSelected, setTabIndexSelected] = useState(true);
 
-    const getFirstTabSelectedClass = () => firstTabSelected ? "main-page-content-first-tab-selected" : "";
+    const getFirstTabSelectedClass = () => tabIndexSelected == 1 ? "main-page-content-first-tab-selected" : "";
+
+    function GetContent(){
+      if(tabIndexSelected == 2){
+        return <AllPosts/>
+      }
+      else {
+        return <div>I need to put some content here</div>
+      }
+    }
 
     return (
       <div className="main-page">
-        <Tabs firstTabSelectedCallback={setFirstTabSelected}/>
+        <Tabs tabSelectedCallback={setTabIndexSelected}/>
         <div className={format("main-page-content {0}", getFirstTabSelectedClass())}>
-          <AllPosts/>
+          {GetContent()}
         </div>
       </div>
     );
