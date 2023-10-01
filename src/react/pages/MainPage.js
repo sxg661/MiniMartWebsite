@@ -10,7 +10,7 @@ function MainPage() {
     const getFirstTabSelectedClass = () => tabIndexSelected == 1 ? "main-page-content-first-tab-selected" : "";
 
     function GetContent(){
-      if(tabIndexSelected == 2){
+      if(tabIndexSelected == 1){
         return <AllPosts/>
       }
       else {

@@ -5,6 +5,7 @@ export default async function GetPostWithId(id, callback) {
     var collectionRef = collection(firestoreDb, "posts");
     var docRef = doc(collectionRef, id);
     var post = await getDoc(docRef);
-    console.log(post.data());
-    callback(post.data());
+    var postData = post.data();
+    postData.id = id;
+    callback(postData);
 };

@@ -9,6 +9,7 @@
     &-container {
         display: flex;
         flex-direction: column;
+        gap: 20px;
     }
 
     &-date {
@@ -16,12 +17,16 @@
         color: var(--colour-grey);
     }
 
-    &-title {
+    // specify whole class to override any default styles
+    .post-title {
         font-size: 16px;
-        margin-bottom: 20px;
         color: var(--colour-);
 
-        border-bottom: 1.5px solid var(--colour-light-grey);
+        border: none;
+
+        padding: 0;
+        background: none;
+        text-align: left;
     }
 
     &-image-container {
@@ -48,7 +53,8 @@
             max-width: 600px;
         }
 
-        &-title {
+        // specify whole class to override any default styles
+        .post-title {
             width: 400px;
         }
     }
@@ -61,6 +67,23 @@
 
         &-video-container {
             width: 100%;
+        }
+    }
+}
+
+.post-single-post {
+    padding: 15px; 
+}
+
+.post-main-page {
+    .post {
+        &-title {
+            text-decoration: underline;
+            cursor: pointer;
+
+            &:hover {
+                color: var(--colour-dark-blue);
+            }
         }
     }
 }

@@ -15,7 +15,9 @@ export default async function GetPostInDateRange(startDate, endDate, callback) {
     const resultDocs = [];
 
     result.forEach(doc => {
-        resultDocs.push(doc.data());
+        const data = doc.data();
+        data.id = doc.id;
+        resultDocs.push(data);
     });
 
     callback(startDate, endDate, resultDocs);

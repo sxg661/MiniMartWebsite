@@ -129,16 +129,19 @@
 .post-container {
   display: flex;
   flex-direction: column;
+  gap: 20px;
 }
 .post-date {
   font-size: 15px;
   color: var(--colour-grey);
 }
-.post-title {
+.post .post-title {
   font-size: 16px;
-  margin-bottom: 20px;
   color: var(--colour-);
-  border-bottom: 1.5px solid var(--colour-light-grey);
+  border: none;
+  padding: 0;
+  background: none;
+  text-align: left;
 }
 .post-image-container a, .post-image-container img {
   width: 100%;
@@ -155,7 +158,7 @@
   .post-video-container {
     max-width: 600px;
   }
-  .post-title {
+  .post .post-title {
     width: 400px;
   }
 }
@@ -166,6 +169,18 @@
   .post-video-container {
     width: 100%;
   }
+}
+
+.post-single-post {
+  padding: 15px;
+}
+
+.post-main-page .post-title {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.post-main-page .post-title:hover {
+  color: var(--colour-dark-blue);
 }
 
 .el-buttons-container {
@@ -202,6 +217,32 @@
   text-align: right;
 }
 
+.sharable-link-button span {
+  display: flex;
+  gap: 10px;
+  color: var(--colour-white);
+  background-color: var(--colour-light-blue);
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  padding: 5px 10px 3px 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.sharable-link-button span:hover {
+  background-color: var(--colour-blue);
+}
+.sharable-link-button svg {
+  padding-top: 1px;
+  fill: var(--colour-white);
+}
+
+/*Desktop only*/
+@media only screen and (min-width: 889px) {
+  .sharable-link-button span {
+    width: 140px;
+  }
+}
 body {
   --colour-blue: #63b6ff;
   --colour-light-light-blue: #b3dbfc;
