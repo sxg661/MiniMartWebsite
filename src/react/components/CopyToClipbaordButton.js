@@ -11,7 +11,7 @@ export default function CopyToClipboardButton(props) {
     function displayCopyNotice(){
         setShowCopyNotice(true);
 
-        setTimeout(() => setShowCopyNotice(false), 2000);
+        setTimeout(() => setShowCopyNotice(false), 1000);
     }
 
     return(
