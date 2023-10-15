@@ -270,7 +270,7 @@
   fill: var(--colour-white);
 }
 
-body {
+.page-container {
   --colour-blue: #63b6ff;
   --colour-light-light-light-blue: #b3dbfc;
   --colour-light-light-blue: #83c4fc;
@@ -281,6 +281,12 @@ body {
   --colour-grey: #666666;
   --colour-light-grey: #aaaaaa;
   --colour-white: white;
+}
+
+.page-container--dark-mode {
+  --colour-white: #353535;
+  --colour-dark-grey: #aaaaaa;
+  --colour-light-dark-grey: #555555;
 }
 
 body, html, #root {
@@ -296,6 +302,7 @@ body, html, #root {
   font-family: "Catamaran", sans-serif;
   display: flex;
   justify-content: center;
+  background-color: var(--colour-white);
 }
 
 button {

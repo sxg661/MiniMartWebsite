@@ -8,7 +8,7 @@ import ErrorPage from './react/pages/ErrorPage';
 function App() {
 
   return (
-    <div className="page-container">
+    <div className="page-container page-container--dark-mode">
 	    <div className="main-container">
 
 		    <div className="title-container">

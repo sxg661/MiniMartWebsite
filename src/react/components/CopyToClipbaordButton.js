@@ -21,7 +21,7 @@ export default function CopyToClipboardButton(props) {
                 <span>{ClipboardIcon()} {props.displayText}</span>
             </CopyToClipboard>
 
-            <div class= {format("copy-to-clipboard-button-copied-notice {0}", getHiddenClass())}>Copied</div> 
+            <div className= {format("copy-to-clipboard-button-copied-notice {0}", getHiddenClass())}>Copied</div> 
         </div>
     );
 }
