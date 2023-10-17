@@ -5,9 +5,9 @@
     }
 
     &-button {
-        background-color: var(--colour-white);
+        background-color: transparent;
         border: none;
-        color: var(--colour-light-dark-grey);
+        color: var(--colour-earlier-later-enabled);
         font-size: 15px;
         font-weight: bold;
         text-decoration: underline;
@@ -18,7 +18,7 @@
 
     &-disabled {
         cursor: default;
-        color: var(--colour-light-grey);
+        color: var(--colour-earlier-later-disabled);
     }
 
     &-button:hover {
@@ -26,7 +26,7 @@
     }
 
     &-disabled:hover {
-        color: var(--colour-light-grey);
+        color: var(--colour-earlier-later-disabled);
     }
 
     &-later {

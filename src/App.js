@@ -4,6 +4,7 @@ import SinglePostPage from './react/pages/SinglePostPage';
 import React from 'react';
 import { HashRouter , Route, Routes } from 'react-router-dom';
 import ErrorPage from './react/pages/ErrorPage';
+import NightModeToggle from './react/components/NightModeToggle';
 
 function App() {
 
@@ -11,9 +12,13 @@ function App() {
     <div className="page-container page-container--dark-mode">
 	    <div className="main-container">
 
-		    <div className="title-container">
-			    <h1 className="title">Mini Mart</h1>
-		    </div>
+        <div className="top-bar-content">
+          <div className="title-container">
+            <h1 className="title">Mini Mart</h1>
+          </div>
+
+          <NightModeToggle/>
+        </div>
 
         <div className="content">
           <HashRouter >

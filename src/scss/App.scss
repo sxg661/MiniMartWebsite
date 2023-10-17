@@ -9,6 +9,7 @@
 @import "earlierLaterButtons";
 @import "copyToClipboardButton";
 @import "colours";
+@import "nightModeToggle";
 
 body, html, #root {
 	width: 100%;
@@ -24,6 +25,15 @@ body, html, #root {
 	display: flex;
 	justify-content: center;
 	background-color: var(--colour-white)
+}
+
+.top-bar-content {
+	display: flex;
+	padding-top: 10px
+}
+
+.title-container {
+	flex-grow: 1;
 }
 
 button {
