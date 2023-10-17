@@ -12,7 +12,7 @@
 }
 .main-page-content {
   flex-grow: 1;
-  background-color: var(--colour-white);
+  background-color: var(--colour-background);
   padding: 15px;
 }
 
@@ -32,7 +32,7 @@
 }
 .single-post {
   height: 100%;
-  background-color: var(--colour-white);
+  background-color: var(--colour-background);
   /*Desktop only*/
 }
 @media only screen and (min-width: 889px) {
@@ -54,22 +54,22 @@
   display: flex;
 }
 .tab:hover .tab-text {
-  color: var(--colour-dark-grey);
+  color: var(--colour-text-tab-hover);
 }
 .tab-text {
   margin: 0;
-  color: var(--colour-white);
+  color: var(--colour-text-tab);
   text-decoration: underline;
   font-weight: bold;
 }
 .tab-selected {
-  background-color: var(--colour-white);
+  background-color: var(--colour-background);
 }
 .tab-selected:hover .tab-text {
-  color: var(--colour-light-light-blue);
+  color: var(--colour-text-tab-selected-hover);
 }
 .tab-selected .tab-text {
-  color: var(--colour-dark-grey);
+  color: var(--colour-text-tab-selected);
   text-decoration: none;
   cursor: default;
 }
@@ -91,7 +91,7 @@
 }
 .title {
   font-family: "Gluten", cursive;
-  color: var(--colour-white);
+  color: var(--colour-title);
 }
 .title-container {
   margin-top: 10px;
@@ -118,7 +118,7 @@
   }
 }
 .post {
-  color: var(--colour-dark-grey);
+  color: var(--colour-text-default);
   /*Desktop only*/
   /*Mobile only*/
 }
@@ -133,11 +133,11 @@
 }
 .post-date {
   font-size: 15px;
-  color: var(--colour-grey);
+  color: var(--colour-text-secondary);
 }
 .post .post-title {
   font-size: 16px;
-  color: var(--colour-);
+  color: var(--colour-text-default);
   border: none;
   padding: 0;
   background: none;
@@ -180,7 +180,7 @@
   cursor: pointer;
 }
 .post-main-page .post-title:hover {
-  color: var(--colour-dark-blue);
+  color: var(--colour-link-hover);
 }
 
 .el-buttons-container {
@@ -203,7 +203,7 @@
   color: var(--colour-earlier-later-disabled);
 }
 .el-buttons-button:hover {
-  color: var(--colour-dark-blue);
+  color: var(--colour-earlier-later-hover);
 }
 .el-buttons-disabled:hover {
   color: var(--colour-earlier-later-disabled);
@@ -224,8 +224,8 @@
   display: flex;
   gap: 10px;
   width: 140px;
-  color: var(--colour-white);
-  background-color: var(--colour-blue);
+  color: var(--colour-clipboard-button-text);
+  background-color: var(--colour-clipboard-button);
   border: none;
   border-radius: 5px;
   font-size: 15px;
@@ -234,7 +234,7 @@
   cursor: pointer;
 }
 .copy-to-clipboard-button span:hover, .copy-to-clipboard-button span:active {
-  background-color: var(--colour-dark-blue);
+  background-color: var(--colour-clipboard-button-hover);
 }
 .copy-to-clipboard-button-copied-notice {
   pointer-events: none;
@@ -245,10 +245,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--colour-blue);
+  color: var(--colour-text-default);
   border-radius: 5px;
-  box-shadow: 2px 2px 6px var(--colour-grey);
-  background-color: var(--colour-white);
+  box-shadow: 2px 2px 6px var(--colour-box-shadow);
+  background-color: var(--colour-background);
   font-size: 15px;
   font-weight: bold;
   transition-property: opacity;
@@ -267,37 +267,72 @@
 }
 .copy-to-clipboard-button svg {
   padding-top: 2px;
-  fill: var(--colour-white);
+  fill: var(--colour-clipboard-button-text);
 }
 
 .page-container {
-  --colour-blue: #0d2d4a;
+  --colour-blue: #1072c7;
   --colour-light-light-light-blue: #b3dbfc;
   --colour-light-light-blue: #83c4fc;
   --colour-light-blue: #71b8f5;
-  --colour-dark-blue: #1072c7;
+  --colour-dark-blue: #164f82;
+  --colour-dark-dark-blue: #0d2d4a;
   --colour-dark-grey: #242424;
   --colour-light-dark-grey: #353535;
+  --colour-light-light-dark-grey: #555555;
   --colour-grey: #666666;
   --colour-light-grey: #aaaaaa;
+  --colour-light-light-grey: #dddddd;
   --colour-white: white;
-  --colour-mode: #b3dbfc;
-  --colour-mode-secondary: #1072c7;
-  --colour-mode-secondary-hover: #71b8f5;
-  --colour-mode-icon: yellow;
-  --colour-earlier-later-enabled: #242424;
-  --colour-earlier-later-disabled: #aaaaaa;
+  --colour-yellow: yellow;
+  --colour-black: black;
 }
 
-.page-container--dark-mode {
-  --colour-white: #353535;
-  --colour-dark-grey: #aaaaaa;
-  --colour-mode: #1b2936;
-  --colour-mode-secondary: #0b528f;
-  --colour-mode-secondary-hover: #1072c7;
-  --colour-mode-icon: #aaaaaa;
-  --colour-earlier-later-enabled: #aaaaaa;
-  --colour-earlier-later-disabled: #555555;
+.page-container {
+  --colour-background: var(--colour-white);
+  --colour-background-secondary: var(--colour-light-blue);
+  --colour-box-shadow: var(--colour-dark-grey);
+  --colour-title: var(--colour-white);
+  --colour-link-hover: var(--colour-dark-dark-blue);
+  --colour-text-default: var(--colour-dark-grey);
+  --colour-text-secondary: var(--colour-grey);
+  --colour-text-tab: var(--colour-white);
+  --colour-text-tab-hover: var(--colour-dark-grey);
+  --colour-text-tab-selected: var(--colour-dark-grey);
+  --colour-text-tab-selected-hover: var(--colour-light-blue);
+  --colour-clipboard-button: var(--colour-blue);
+  --colour-clipboard-button-hover: var(--colour-dark-dark-blue);
+  --colour-clipboard-button-text: var(--colour-white);
+  --colour-mode:var(--colour-light-light-light-blue);
+  --colour-mode-secondary: var(--colour-blue);
+  --colour-mode-secondary-hover: var(--colour-light-blue);
+  --colour-mode-icon: var(--colour-yellow);
+  --colour-earlier-later-enabled: var(--colour-dark-grey);
+  --colour-earlier-later-disabled: var(--colour-light-grey);
+  --colour-earlier-later-hover: var(--colour-blue);
+}
+
+.page-container--night-mode {
+  --colour-background: var(--colour-dark-grey);
+  --colour-background-secondary: var(--colour-dark-dark-blue);
+  --colour-box-shadow: var(--colour-black);
+  --colour-title: var(--colour-light-grey);
+  --colour-link-hover: var(--colour-blue);
+  --colour-text-default: var(--colour-light-grey);
+  --colour-text-secondary: var(--colour-grey);
+  --colour-text-tab: var(--colour-light-grey);
+  --colour-text-tab-hover: var(--colour-grey);
+  --colour-text-tab-selected: var(--colour-light-grey);
+  --colour-text-tab-selected-hover: var(--colour-light-blue);
+  --colour-clipboard-button: var(--colour-dark-blue);
+  --colour-clipboard-button-hover: var(--colour-dark-dark-blue);
+  --colour-clipboard-button-text: var(--colour-light-light-grey);
+  --colour-mode: var(--colour-light-dark-grey);
+  --colour-mode-secondary: var(--colour-dark-blue);
+  --colour-mode-secondary-hover: var(--colour-blue);
+  --colour-mode-icon: var(--colour-light-grey);
+  --colour-earlier-later-enabled: var(--colour-light-grey);
+  --colour-earlier-later-disabled: var(--colour-light-light-dark-grey);
 }
 
 .night-mode-toggle {
@@ -355,7 +390,7 @@ body, html, #root {
   font-family: "Catamaran", sans-serif;
   display: flex;
   justify-content: center;
-  background-color: var(--colour-white);
+  background-color: var(--colour-background);
 }
 
 .top-bar-content {
@@ -374,7 +409,7 @@ button {
 
 .main-container {
   flex-grow: 1;
-  background-color: var(--colour-light-blue);
+  background-color: var(--colour-background-secondary);
   max-width: 1000px;
   display: grid;
 }

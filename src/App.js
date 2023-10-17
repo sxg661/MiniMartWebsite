@@ -9,7 +9,7 @@ import NightModeToggle from './react/components/NightModeToggle';
 function App() {
 
   return (
-    <div className="page-container page-container--dark-mode">
+    <div className="page-container page-container--night-mode">
 	    <div className="main-container">
 
         <div className="top-bar-content">

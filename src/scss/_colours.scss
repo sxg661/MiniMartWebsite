@@ -1,29 +1,79 @@
+//base-colours
 .page-container {
-	--colour-blue: #0d2d4a;
+	--colour-blue: #1072c7;
 	--colour-light-light-light-blue: #b3dbfc;
 	--colour-light-light-blue: #83c4fc;
 	--colour-light-blue: #71b8f5;
-	--colour-dark-blue: #1072c7;
+	--colour-dark-blue: #164f82;
+	--colour-dark-dark-blue: #0d2d4a;
 	--colour-dark-grey: #242424;
 	--colour-light-dark-grey: #353535;
+	--colour-light-light-dark-grey: #555555;
 	--colour-grey: #666666;
 	--colour-light-grey: #aaaaaa;
+	--colour-light-light-grey: #dddddd;
     --colour-white: white;
-	--colour-mode: #b3dbfc;
-	--colour-mode-secondary: #1072c7;
-	--colour-mode-secondary-hover: #71b8f5;
-	--colour-mode-icon: yellow;
-	--colour-earlier-later-enabled: #242424;
-	--colour-earlier-later-disabled: #aaaaaa;
+	--colour-yellow: yellow;
+	--colour-black: black;
 }
 
-.page-container--dark-mode {
-    --colour-white: #353535;
-    --colour-dark-grey: #aaaaaa;
-	--colour-mode: #1b2936;
-	--colour-mode-secondary: #0b528f;
-	--colour-mode-secondary-hover: #1072c7;
-	--colour-mode-icon: #aaaaaa;
-	--colour-earlier-later-enabled: #aaaaaa;
-	--colour-earlier-later-disabled: #555555;
+// Light mode
+.page-container {
+	--colour-background: var(--colour-white);
+	--colour-background-secondary: var(--colour-light-blue);
+
+	--colour-box-shadow: var(--colour-dark-grey);
+
+	--colour-title: var(--colour-white);
+	--colour-link-hover: var(--colour-dark-dark-blue);
+	--colour-text-default: var(--colour-dark-grey);
+	--colour-text-secondary: var(--colour-grey);
+
+	--colour-text-tab: var(--colour-white);
+	--colour-text-tab-hover: var(--colour-dark-grey); 
+	--colour-text-tab-selected: var(--colour-dark-grey);
+	--colour-text-tab-selected-hover: var(--colour-light-blue);
+
+	--colour-clipboard-button: var(--colour-blue);
+	--colour-clipboard-button-hover: var(--colour-dark-dark-blue);
+	--colour-clipboard-button-text: var(--colour-white);
+
+	--colour-mode:var(--colour-light-light-light-blue);
+	--colour-mode-secondary: var(--colour-blue);
+	--colour-mode-secondary-hover: var(--colour-light-blue);
+	--colour-mode-icon: var(--colour-yellow);
+
+	--colour-earlier-later-enabled: var(--colour-dark-grey);
+	--colour-earlier-later-disabled: var(--colour-light-grey);
+	--colour-earlier-later-hover: var(--colour-blue);
+}
+
+// Night mode
+.page-container--night-mode {
+	--colour-background: var(--colour-dark-grey);
+	--colour-background-secondary: var(--colour-dark-dark-blue);
+	
+	--colour-box-shadow: var(--colour-black);
+
+	--colour-title: var(--colour-light-grey);
+	--colour-link-hover: var(--colour-blue);
+	--colour-text-default: var(--colour-light-grey);
+	--colour-text-secondary: var(--colour-grey);
+
+	--colour-text-tab: var(--colour-light-grey);
+	--colour-text-tab-hover: var(--colour-grey); 
+	--colour-text-tab-selected: var(--colour-light-grey);
+	--colour-text-tab-selected-hover: var(--colour-light-blue);
+
+	--colour-clipboard-button: var(--colour-dark-blue);
+	--colour-clipboard-button-hover: var(--colour-dark-dark-blue);
+	--colour-clipboard-button-text: var(--colour-light-light-grey);
+
+	--colour-mode: var(--colour-light-dark-grey);
+	--colour-mode-secondary: var(--colour-dark-blue);
+	--colour-mode-secondary-hover: var(--colour-blue);
+	--colour-mode-icon: var(--colour-light-grey);
+
+	--colour-earlier-later-enabled: var(--colour-light-grey);
+	--colour-earlier-later-disabled: var(--colour-light-light-dark-grey);
 }

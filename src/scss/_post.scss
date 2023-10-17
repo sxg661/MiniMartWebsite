@@ -1,5 +1,5 @@
 .post {
-	color: var(--colour-dark-grey);
+	color: var(--colour-text-default);
 
     p, h3 {
         margin: 0;
@@ -14,13 +14,13 @@
 
     &-date {
         font-size: 15px;
-        color: var(--colour-grey);
+        color: var(--colour-text-secondary);
     }
 
     // specify whole class to override any default styles
     .post-title {
         font-size: 16px;
-        color: var(--colour-);
+        color: var(--colour-text-default);
 
         border: none;
 
@@ -82,7 +82,7 @@
             cursor: pointer;
 
             &:hover {
-                color: var(--colour-dark-blue);
+                color: var(--colour-link-hover);
             }
         }
     }

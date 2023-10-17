@@ -13,28 +13,28 @@
 
     &:hover {
         .tab-text {
-            color: var(--colour-dark-grey);
+            color: var(--colour-text-tab-hover);
         }
     }
 
     &-text {
         margin: 0;
-        color: var(--colour-white);
+        color: var(--colour-text-tab);
         text-decoration: underline;
         font-weight: bold;
     }
 
     &-selected {
-        background-color: var(--colour-white);
+        background-color: var(--colour-background);
 
         &:hover {
             .tab-text {
-                color: var(--colour-light-light-blue);
+                color: var(--colour-text-tab-selected-hover);
             }
         }
 
         .tab-text {
-            color: var(--colour-dark-grey);
+            color: var(--colour-text-tab-selected);
             text-decoration: none;
             cursor: default;
         }

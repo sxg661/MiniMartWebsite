@@ -24,7 +24,7 @@ body, html, #root {
 	font-family: 'Catamaran', sans-serif;
 	display: flex;
 	justify-content: center;
-	background-color: var(--colour-white)
+	background-color: var(--colour-background)
 }
 
 .top-bar-content {
@@ -43,7 +43,7 @@ button {
 
 .main-container {
 	flex-grow: 1;
-	background-color: var(--colour-light-blue);
+	background-color: var(--colour-background-secondary);
 	max-width: 1000px;
 	
 	display: grid;
