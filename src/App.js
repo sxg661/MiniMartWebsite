@@ -27,7 +27,7 @@ function App() {
 
         <div className="top-bar-content">
           <div className="title-container">
-            <h1 className="title">Mini Mart</h1>
+            <a href="https://minimart.dev"><h1 className="title">Mini Mart</h1></a>
           </div>
 
           <NightModeToggle 

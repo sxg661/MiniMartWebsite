@@ -34,6 +34,10 @@ body, html, #root {
 
 .title-container {
 	flex-grow: 1;
+
+	a {
+		text-decoration: none;
+	}
 }
 
 button {

@@ -411,6 +411,9 @@ body, html, #root {
 .title-container {
   flex-grow: 1;
 }
+.title-container a {
+  text-decoration: none;
+}
 
 button {
   font-family: "Catamaran", sans-serif;
