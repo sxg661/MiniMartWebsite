@@ -4,13 +4,12 @@ import Tabs from "../components/Tabs";
 import AllPosts from "../components/AllPosts";
 
 function MainPage() {
-    const [firstTabSelected, setFirstTabSelected] = useState(true);
-    const [tabIndexSelected, setTabIndexSelected] = useState(true);
+    const [tabIndexSelected, setTabIndexSelected] = useState(1);
 
-    const getFirstTabSelectedClass = () => tabIndexSelected == 1 ? "main-page-content-first-tab-selected" : "";
+    const getFirstTabSelectedClass = () => tabIndexSelected === 1 ? "main-page-content-first-tab-selected" : "";
 
     function GetContent(){
-      if(tabIndexSelected == 1){
+      if(tabIndexSelected === 1){
         return <AllPosts/>
       }
       else {
