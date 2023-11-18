@@ -220,6 +220,7 @@
 
 .copy-to-clipboard-button {
   position: relative;
+  border: none;
 }
 .copy-to-clipboard-button span {
   display: flex;
