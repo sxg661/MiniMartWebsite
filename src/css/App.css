@@ -221,6 +221,7 @@
 .copy-to-clipboard-button {
   position: relative;
   border: none;
+  background-color: transparent;
 }
 .copy-to-clipboard-button span {
   display: flex;
