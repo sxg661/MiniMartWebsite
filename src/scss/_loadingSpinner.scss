@@ -1,0 +1,22 @@
+.loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @keyframes spin { 
+        100% { 
+            -webkit-transform: rotate(360deg); 
+            transform:rotate(360deg); 
+        } 
+    }
+
+    &-icon {
+        font-size: 50px;
+        color: var(--colour-loading-spinner);
+        animation: spin 1s linear infinite;
+    }
+
+    &-hidden {
+        display: none;
+    }
+}

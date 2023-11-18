@@ -4,6 +4,7 @@ import GetMostRecentPostDate from "../../database/GetMostRecentPostDate";
 import GetEarliestPostDate from "../../database/GetEarliestPostDate";
 import Post from "./Post";
 import EarlierLaterButtons from "./EarlierLaterButtons";
+import LoadingSpinner from "./LoadingSpinner";
 
 function addDays(date, numberOfDays) {
     const dateCopy = new Date(date);
@@ -34,12 +35,18 @@ export default function AllPosts(props) {
     const [enableLaterButton, setEnableLaterButton] = useState(true);
     const [enableEarlierButton, setEnableEarlierButton] = useState(true);
 
+    const [loadingSpinnerVisible, setLoadingSpinnerVisible] = useState(true);
+
     function GetMostRecentPostDateShown(posts){
         return posts[0].time.toDate();
     }
 
     function GetEarliestPostDateShown(posts){
         return posts[posts.length - 1].time.toDate();
+    }
+
+    function PostsCurrentlyOnPage(){
+        return !(postsToShow.length === 0);
     }
 
     function PostLoadCallback(postsToShowBuffer, startDate, endDate, postDatas, lookForwards) {
@@ -90,6 +97,8 @@ export default function AllPosts(props) {
         }
 
         postsToShowBuffer = [];
+        console.log("hiding spinner");
+        setLoadingSpinnerVisible(false);
     }
 
     function LoadInitialPosts(){
@@ -98,9 +107,11 @@ export default function AllPosts(props) {
 
         setEnableLaterButton(false);
         setEnableEarlierButton(false);
+        setLoadingSpinnerVisible(true);
 
         GetPostInDateRange(startDate , endDate, (startDate, endDate, postDatas) => PostLoadCallback([], startDate, endDate, postDatas, false));
     }
+
     useEffect(() => LoadInitialPosts(), [])
 
     function HandleEalierButtonClick() {
@@ -109,6 +120,8 @@ export default function AllPosts(props) {
 
         setEnableLaterButton(false);
         setEnableEarlierButton(false);
+        setLoadingSpinnerVisible(true);
+        setPostsToShow([]);
 
         GetPostInDateRange(startDate , endDate, (startDate, endDate, postDatas) => PostLoadCallback([], startDate, endDate, postDatas, false));
     }
@@ -117,12 +130,24 @@ export default function AllPosts(props) {
         const startDate = addMilliseconds(GetMostRecentPostDateShown(postsToShow), 1);
         const endDate = addDays(startDate, timeIntervalToSearchInDays);
 
+        setEnableLaterButton(false);
+        setEnableEarlierButton(false);
+        setLoadingSpinnerVisible(true);
+        setPostsToShow([]);
+
         GetPostInDateRange(startDate , endDate, (startDate, endDate, postDatas) => PostLoadCallback([], startDate, endDate, postDatas, true));
     }
 
     const RenderPosts = () => postsToShow.map(
         post => <Post key={post.key} postData={post} IsSinglePost={false}/>
     )
+
+    function RenderLoadingSpinner() {
+        console.log(PostsCurrentlyOnPage())
+        if(!PostsCurrentlyOnPage() && loadingSpinnerVisible){
+            return <LoadingSpinner/>
+        }
+    }
 
     const RenderEarlierLaterButtons = () => 
         <EarlierLaterButtons 
@@ -134,6 +159,7 @@ export default function AllPosts(props) {
     return(
         <div className="post-container">
             {RenderEarlierLaterButtons()}
+            {RenderLoadingSpinner()}
             {RenderPosts()}
             {RenderEarlierLaterButtons()}
         </div>

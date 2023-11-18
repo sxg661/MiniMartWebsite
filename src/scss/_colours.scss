@@ -47,6 +47,8 @@
 	--colour-earlier-later-enabled: var(--colour-dark-grey);
 	--colour-earlier-later-disabled: var(--colour-light-grey);
 	--colour-earlier-later-hover: var(--colour-blue);
+
+	--colour-loading-spinner: var(--colour-light-blue);
 }
 
 // Night mode
@@ -77,4 +79,6 @@
 
 	--colour-earlier-later-enabled: var(--colour-light-grey);
 	--colour-earlier-later-disabled: var(--colour-light-light-dark-grey);
+
+	--colour-loading-spinner: var(--colour-dark-blue);
 }
