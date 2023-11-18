@@ -222,6 +222,7 @@
   position: relative;
   border: none;
   background-color: transparent;
+  padding-left: 0;
 }
 .copy-to-clipboard-button span {
   display: flex;
