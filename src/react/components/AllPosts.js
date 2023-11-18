@@ -97,7 +97,6 @@ export default function AllPosts(props) {
         }
 
         postsToShowBuffer = [];
-        console.log("hiding spinner");
         setLoadingSpinnerVisible(false);
     }
 
@@ -143,7 +142,6 @@ export default function AllPosts(props) {
     )
 
     function RenderLoadingSpinner() {
-        console.log(PostsCurrentlyOnPage())
         if(!PostsCurrentlyOnPage() && loadingSpinnerVisible){
             return <LoadingSpinner/>
         }

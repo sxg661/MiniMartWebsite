@@ -11,7 +11,6 @@ function App() {
 
   //page-container--night-mode
   const [nightModeOn, setNightModeOn] = useState(localStorage.getItem("nightMode") === "true");
-  console.log(localStorage.getItem("nightMode"));
 
   const getNightModeClass = () => nightModeOn ? "page-container--night-mode" : "";
 
