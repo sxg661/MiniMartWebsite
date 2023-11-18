@@ -9,7 +9,7 @@ export default function NightModeToggle(props) {
         }
     }
 
-    const GetIconClass = () => props.nightModeOn ? "fa-solid fa-moon" : "fa-solid fa-sun";
+    const GetIconClass = () => props.nightModeOn ? "fa-solid fa-moon" : "fa-solid fa-cloud-sun";
 
     return(
         <button className="night-mode-toggle" onClick = {CallHandler}>

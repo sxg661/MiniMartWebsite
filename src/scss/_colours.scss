@@ -1,5 +1,6 @@
 //base-colours
 .page-container {
+	--colour-medium-blue: #3199f5;
 	--colour-blue: #1072c7;
 	--colour-light-light-light-blue: #b3dbfc;
 	--colour-light-light-blue: #83c4fc;
@@ -13,7 +14,7 @@
 	--colour-light-grey: #aaaaaa;
 	--colour-light-light-grey: #dddddd;
     --colour-white: white;
-	--colour-yellow: yellow;
+	--colour-light-yellow: #e7e89b;
 	--colour-black: black;
 }
 
@@ -39,9 +40,9 @@
 	--colour-clipboard-button-text: var(--colour-white);
 
 	--colour-mode:var(--colour-light-light-light-blue);
-	--colour-mode-secondary: var(--colour-blue);
+	--colour-mode-secondary: var(--colour-medium-blue);
 	--colour-mode-secondary-hover: var(--colour-light-blue);
-	--colour-mode-icon: var(--colour-yellow);
+	--colour-mode-icon: var(--colour-light-yellow);
 
 	--colour-earlier-later-enabled: var(--colour-dark-grey);
 	--colour-earlier-later-disabled: var(--colour-light-grey);
