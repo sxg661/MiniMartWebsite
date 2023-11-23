@@ -5,6 +5,7 @@ import GetEarliestPostDate from "../../database/GetEarliestPostDate";
 import Post from "./Post";
 import EarlierLaterButtons from "./EarlierLaterButtons";
 import LoadingSpinner from "./LoadingSpinner";
+import { firebaseConfig } from "../../database/firebase";
 
 function addDays(date, numberOfDays) {
     const dateCopy = new Date(date);
@@ -51,6 +52,8 @@ export default function AllPosts(props) {
 
     function PostLoadCallback(postsToShowBuffer, startDate, endDate, postDatas, lookForwards) {
         const amountNeeded = postsPerPage - postsToShowBuffer.length;
+
+        postDatas = postDatas.filter((post) => firebaseConfig.showNonProdPosts || post.showOnProd);
 
         const additonalPostsToShow = lookForwards ? 
             postDatas.slice(0, amountNeeded) :
