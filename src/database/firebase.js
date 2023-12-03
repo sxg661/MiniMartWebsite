@@ -8,7 +8,7 @@ export const firebaseConfig = {
     storageBucket: "minimart-5d4e9.appspot.com",
     messagingSenderId: "773348357152",
     appId: "1:773348357152:web:f83153bdbae90ef10d7845",
-    showNonProdPosts: false
+    showNonProdPosts: true
   };
 const app = initializeApp(firebaseConfig);
 

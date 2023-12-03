@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { format } from "react-string-format";
 import Tabs from "../components/Tabs";
 import AllPosts from "../components/AllPosts";
+import AboutMe from "../components/AboutMe";
+import Youtube from "../components/Youtube";
 
 function MainPage() {
     const [tabIndexSelected, setTabIndexSelected] = useState(1);
@@ -12,9 +14,14 @@ function MainPage() {
       if(tabIndexSelected === 1){
         return <AllPosts/>
       }
-      else {
-        return <div>I need to put some content here</div>
+      if(tabIndexSelected === 2){
+        return <AboutMe/>
       }
+      if(tabIndexSelected === 3){
+        return <Youtube/>
+      }
+      
+      return <div>I need to put some content here</div>
     }
 
     return (

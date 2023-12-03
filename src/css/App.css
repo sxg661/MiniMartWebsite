@@ -135,6 +135,9 @@
   font-size: 15px;
   color: var(--colour-text-secondary);
 }
+.post-link {
+  color: var(--colour-text-link);
+}
 .post .post-title {
   font-size: 16px;
   color: var(--colour-text-default);
@@ -143,7 +146,7 @@
   background: none;
   text-align: left;
 }
-.post-image-container a, .post-image-container img {
+.post-image-container a, .post-image-container img, .post-image-container iframe {
   width: 100%;
   border-radius: 5px;
 }
@@ -301,6 +304,7 @@
   --colour-link-hover: var(--colour-dark-dark-blue);
   --colour-text-default: var(--colour-dark-grey);
   --colour-text-secondary: var(--colour-grey);
+  --colour-text-link: var(--colour-blue);
   --colour-text-tab: var(--colour-white);
   --colour-text-tab-hover: var(--colour-dark-grey);
   --colour-text-tab-selected: var(--colour-dark-grey);
@@ -326,6 +330,7 @@
   --colour-link-hover: var(--colour-blue);
   --colour-text-default: var(--colour-light-grey);
   --colour-text-secondary: var(--colour-grey);
+  --colour-text-link: var(--colour-light-blue);
   --colour-text-tab: var(--colour-light-grey);
   --colour-text-tab-hover: var(--colour-grey);
   --colour-text-tab-selected: var(--colour-light-grey);

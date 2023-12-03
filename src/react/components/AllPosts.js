@@ -53,8 +53,6 @@ export default function AllPosts(props) {
     function PostLoadCallback(postsToShowBuffer, startDate, endDate, postDatas, lookForwards) {
         const amountNeeded = postsPerPage - postsToShowBuffer.length;
 
-        postDatas = postDatas.filter((post) => firebaseConfig.showNonProdPosts || post.showOnProd);
-
         const additonalPostsToShow = lookForwards ? 
             postDatas.slice(0, amountNeeded) :
             postDatas.slice(Math.max(postDatas.length - amountNeeded, 0));

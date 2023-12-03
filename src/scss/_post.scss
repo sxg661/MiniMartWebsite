@@ -17,6 +17,10 @@
         color: var(--colour-text-secondary);
     }
 
+    &-link {
+        color: var(--colour-text-link);
+    }
+
     // specify whole class to override any default styles
     .post-title {
         font-size: 16px;
@@ -30,7 +34,7 @@
     }
 
     &-image-container {
-        a, img {
+        a, img, iframe {
             width: 100%;
             border-radius: 5px;
         }

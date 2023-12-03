@@ -1,6 +1,7 @@
 import parse from 'html-react-parser';
 import { useNavigate } from 'react-router-dom';
 import CopyToClipboardButton from './CopyToClipbaordButton';
+import GetPostInDateRange from '../../database/GetPostsInDateRange';
 
 export default function Post(props) {
 
@@ -30,12 +31,24 @@ export default function Post(props) {
         return `minimart.dev/#/post?id=${props.postData.id}`
     }
 
+    function getDateElement() {
+        if(props.postData.time) {
+            return <div className="post-date">{convertTimestampToString(props.postData.time)}</div>
+        }
+    }
+
+    function getCopyToClipboardButton() {
+        if(!props.HideCopyToClipboardButton){
+            return <CopyToClipboardButton text={getPostUrl()} displayText="Copy sharable link"/>
+        }
+    }
+
     return(
         <div className={getPostClass()}>
-            <div className="post-date">{convertTimestampToString(props.postData.time)}</div>
+            {getDateElement()}
             {getPostTitleElement()}
             {parse(props.postData.html ? props.postData.html : "")}
-            <CopyToClipboardButton text={getPostUrl()} displayText="Copy sharable link"/>
+            {getCopyToClipboardButton()}
         </div>
     )
 }
