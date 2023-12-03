@@ -28,8 +28,8 @@ function getTomorrowMidnight(){
 export default function AllPosts(props) {
     let nextKey = 0;
 
-    const postsPerPage = 2;
-    const timeIntervalToSearchInDays = 28;
+    const postsPerPage = 5;
+    const timeIntervalToSearchInDays = 14;
 
     const [postsToShow, setPostsToShow] = useState([])
 
