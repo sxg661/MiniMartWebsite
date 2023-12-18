@@ -28,7 +28,7 @@ export default function Post(props) {
     }
 
     function getPostUrl() {
-        return `minimart.dev/#/post?id=${props.postData.id}`
+        return `https://minimart.dev/#/post?id=${props.postData.id}`
     }
 
     function getDateElement() {
