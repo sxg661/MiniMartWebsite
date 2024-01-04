@@ -12,7 +12,7 @@ export default function AboutMe() {
         <p>Check out some of my past projects:<p>
 
         <h4 style="margin-bottom: 5px"><a class="post-link" href="https://defiantdaisygames.itch.io/spider-hunt">Spider Hunt</a></h4>
-        <p style="margin-bottom: 5px">A small game I made for a university Game Jam</p>
+        <p style="margin-bottom: 5px">A small game I made for a University Game Jam</p>
         <div class="post-image-container">
             <img src="https://imgur.com/AjrZG1N.png" title="source: imgur.com"/>
         </div>
