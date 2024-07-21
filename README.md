@@ -1,3 +1,6 @@
+This is the git repository of the dev log for my supermarket game.
+View the blog here: https://minimart.dev/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
