@@ -4,12 +4,15 @@ export default function Youtube() {
 
     const postHtml = `
     <div class="post-content"> 
-        <p style="margin-bottom: 5px">My youtube channel is coming soon! Keep an eye on this section for updates.</P>
+        <p style="margin-bottom: 5px">I have recently started a youtube channel to document the progress of my game. I will try to upload videos as frequently as I can, so make sure to check for new content!</P>
         
+        <a class="post-link" href="https://www.youtube.com/@defiantdaisy">See my channel here</a>
+        <br/>
+        <br/>
         <div class="post-image-container">
-            <iframe style = "max-width: 390px; max-height: 400px; border-radius: 5px" src="https://giphy.com/embed/sthmCnCpfr8M8jtTQy" width="472" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+            <a href="https://www.youtube.com/@defiantdaisy"><img style="width:200px;" src="https://i.imgur.com/oCHu4fe.png" title="source: imgur.com"></a>
         </div>
-
+        
     </div>
     `
 
