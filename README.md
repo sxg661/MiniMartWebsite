@@ -1,5 +1,11 @@
+# Mini Mart Blog
+
 This is the git repository of the dev log for my supermarket game.
 View the blog here: https://minimart.dev/
+
+![image](https://github.com/user-attachments/assets/e0d10730-8e2f-42d6-a1af-e80a61c80909)
+
+<br><br><br><br>
 
 # Getting Started with Create React App
 
