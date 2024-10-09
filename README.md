@@ -3,6 +3,8 @@
 This is the git repository of the dev log for my supermarket game.
 View the blog here: https://minimart.dev/
 
+This blog is hosted using Github Pages and I use a Google Firestore database to store blog posts.
+
 ![image](https://github.com/user-attachments/assets/e0d10730-8e2f-42d6-a1af-e80a61c80909)
 
 <br><br><br><br>
