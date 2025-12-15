@@ -10,7 +10,7 @@ export default function Youtube() {
         <br/>
         <br/>
         <div class="post-image-container">
-            <a href="https://www.youtube.com/@defiantdaisy"><img style="width:200px;" src="https://i.imgur.com/oCHu4fe.png" title="source: imgur.com"></a>
+            <a href="https://www.youtube.com/@defiantdaisy"><img style="width:200px;" src="/images/daisylogoyoutube.png" title="source: image"></a>
         </div>
         
     </div>
