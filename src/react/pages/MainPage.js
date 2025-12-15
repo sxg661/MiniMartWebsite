@@ -20,7 +20,6 @@ function MainPage() {
       if(tabIndexSelected === 3){
         return <Youtube/>
       }
-      
       return <div>I need to put some content here</div>
     }
 

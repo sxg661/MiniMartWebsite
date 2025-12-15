@@ -5,7 +5,6 @@ import GetEarliestPostDate from "../../database/GetEarliestPostDate";
 import Post from "./Post";
 import EarlierLaterButtons from "./EarlierLaterButtons";
 import LoadingSpinner from "./LoadingSpinner";
-import { firebaseConfig } from "../../database/firebase";
 
 function addDays(date, numberOfDays) {
     const dateCopy = new Date(date);
